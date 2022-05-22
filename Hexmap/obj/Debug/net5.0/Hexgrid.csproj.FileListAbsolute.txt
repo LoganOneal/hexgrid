@@ -1,0 +1,12 @@
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\bin\Debug\net5.0\Hexgrid.deps.json
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\bin\Debug\net5.0\Hexgrid.dll
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\bin\Debug\net5.0\ref\Hexgrid.dll
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\bin\Debug\net5.0\Hexgrid.pdb
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\obj\Debug\net5.0\Hexgrid.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\obj\Debug\net5.0\Hexgrid.AssemblyInfoInputs.cache
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\obj\Debug\net5.0\Hexgrid.AssemblyInfo.cs
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\obj\Debug\net5.0\Hexgrid.csproj.CoreCompileInputs.cache
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\obj\Debug\net5.0\Hexgrid.dll
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\obj\Debug\net5.0\ref\Hexgrid.dll
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\obj\Debug\net5.0\Hexgrid.pdb
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\obj\Debug\net5.0\Hexgrid.csproj.AssemblyReference.cache

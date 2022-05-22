@@ -1,0 +1,12 @@
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\bin\Debug\net5.0\Hexmap.deps.json
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\bin\Debug\net5.0\Hexmap.dll
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\bin\Debug\net5.0\ref\Hexmap.dll
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\bin\Debug\net5.0\Hexmap.pdb
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\obj\Debug\net5.0\Hexmap.csproj.AssemblyReference.cache
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\obj\Debug\net5.0\Hexmap.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\obj\Debug\net5.0\Hexmap.AssemblyInfoInputs.cache
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\obj\Debug\net5.0\Hexmap.AssemblyInfo.cs
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\obj\Debug\net5.0\Hexmap.csproj.CoreCompileInputs.cache
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\obj\Debug\net5.0\Hexmap.dll
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\obj\Debug\net5.0\ref\Hexmap.dll
+C:\Users\Logan O\source\repos\HexmapSolution\Hexmap\obj\Debug\net5.0\Hexmap.pdb

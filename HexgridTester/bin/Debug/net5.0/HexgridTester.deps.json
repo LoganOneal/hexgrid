@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "HexgridTester/1.0.0": {
+        "dependencies": {
+          "Hexgrid": "1.0.0"
+        },
+        "runtime": {
+          "HexgridTester.dll": {}
+        }
+      },
+      "Hexgrid/1.0.0": {
+        "runtime": {
+          "Hexgrid.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "HexgridTester/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Hexgrid/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

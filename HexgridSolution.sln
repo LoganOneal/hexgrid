@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32510.428
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hexgrid", "Hexmap\Hexgrid.csproj", "{97F90E3A-1138-492D-95D0-A1F65E06FE19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexgridTester", "HexgridTester\HexgridTester.csproj", "{851D278D-4296-49AD-9096-1BCD757EC62A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{97F90E3A-1138-492D-95D0-A1F65E06FE19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97F90E3A-1138-492D-95D0-A1F65E06FE19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97F90E3A-1138-492D-95D0-A1F65E06FE19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97F90E3A-1138-492D-95D0-A1F65E06FE19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{851D278D-4296-49AD-9096-1BCD757EC62A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{851D278D-4296-49AD-9096-1BCD757EC62A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{851D278D-4296-49AD-9096-1BCD757EC62A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{851D278D-4296-49AD-9096-1BCD757EC62A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB5ED207-4159-4EE6-8406-18E9BB3D6DD5}
+	EndGlobalSection
+EndGlobal
