@@ -3,12 +3,13 @@ using System.Collections.Generic;
 
 namespace Hexgrid
 {
-    public class Tile
+    class Tile
     {
         private int _q, _r, _s;
         private int _value;
 
-        List<Tile> neighbors;
+        private List<Tile> neighbors;
+        private List<Vertex> vertices;
 
         public Tile(int q, int r)
         {
@@ -36,8 +37,10 @@ namespace Hexgrid
         public void AddNeighbor(Tile tile) { neighbors.Add(tile); }
         public List<Tile> GetNeighbors() { return neighbors; }
 
+        public void AddVertex(Vertex v) { vertices.Add(v); }
+        public List<Vertex> GetVertices() { return vertices; }
+
+
         public void Print() { Console.WriteLine(_value.ToString()); }
-
-
     }
 }

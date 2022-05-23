@@ -8,7 +8,7 @@ namespace Hexgrid
 {
     class Edge
     {
-        Tile from;
-        Tile to;
+        private Tile _to;
+        private Tile _from;
     }
 }
