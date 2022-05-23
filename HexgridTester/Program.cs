@@ -7,11 +7,13 @@ namespace HexgridTester
     {
         static void Main(string[] args)
         {
-            HexGrid hm = new HexGrid(3);
+            HexGrid hm = new HexGrid(1);
 
             Console.WriteLine(hm.Size().ToString());
 
-            //hm.Print();
+            hm.Print();
+
+            hm.PrintGridNeighbors();
         }
     }
 }
