@@ -11,7 +11,7 @@ namespace Hexgrid
 
         Each hexagon has 6 vertices. We can choose 2 vertices that are each shared with 3 tiles.
         Here, I've picked the north and south vertices, but there are many ways to do this.*/
-    class Vertex
+    public class Vertex
     {
         private int _q, _r;
         private char _D;          // 'N' if north, 'S' if south
@@ -22,5 +22,10 @@ namespace Hexgrid
             _r = r;
             _D = D;
         }
+        public int GetQ() { return _q; }
+        public int GetR() { return _r; }
+        public int GetD() { return _D; }
+
+
     }
 }

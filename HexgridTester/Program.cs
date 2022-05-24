@@ -9,11 +9,9 @@ namespace HexgridTester
         {
             HexGrid hm = new HexGrid(1);
 
-            Console.WriteLine(hm.Size().ToString());
+          //  hm.Print();
 
-            hm.Print();
-
-            hm.PrintGridNeighbors();
+           // hm.PrintGridNeighbors();
         }
     }
 }

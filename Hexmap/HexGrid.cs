@@ -11,6 +11,7 @@ namespace Hexgrid
         private (int delta_q, int delta_r)[] _tileDirVecor = new (int, int)[] { (1, 0), (1, -1), (0, -1), 
                                                                              (-1, 0), (-1, 1), (0, 1) };
 
+        private Vertex[,,] _vertices;
         private (int delta_q, int delta_r, char D)[] _vertexDirVecor = new (int, int, char)[] { (0, 0, 'N'), (0, -1, 'S'), (-1, 1, 'N'), (0, 0, 'S'), (0, 1, 'N'), (1, -1, 'S') };
 
         // maps onto _dirVector for traversing the grid. 
@@ -30,11 +31,13 @@ namespace Hexgrid
         {
             int q, r;
             int q2, r2;
+            char D;
             Tile tile;
             Vertex vertex;
 
             _N = N;
             _grid = new Tile[2 * N + 1,2 * N + 1];
+            _vertices = new Vertex[2 * N + 3, 2 * N + 3, 2];
 
             for (q = -_N; q <= _N; q++)
             {
@@ -49,7 +52,16 @@ namespace Hexgrid
                     {
                         q2 = q + _vertexDirVecor[i].Item1;
                         r2 = r + _vertexDirVecor[i].Item2;
-
+                        D = _vertexDirVecor[i].Item3;
+                        if (GetVertex(q2, r2, D) == null)
+                        {
+                            vertex = new Vertex(q2, r2, D);
+                            tile.AddVertex(vertex);
+                            StoreVertex(q2, r2, D, vertex);
+                        } else
+                        {
+                            tile.AddVertex(GetVertex(q2, r2, D));
+                        }
                     }
 
                 }
@@ -57,6 +69,8 @@ namespace Hexgrid
 
             Fill(1);
             UpdateGridNeighbors();
+
+            //GetTile(1,0).PrintVertices();
         }
 
         // Store Hex(q, r) at array[r][q - max(0, N-r)]
@@ -66,6 +80,20 @@ namespace Hexgrid
         }
 
         public Tile GetTile(int q, int r) { return _grid[r + _N, q + _N]; }
+
+        public void StoreVertex(int q, int r, char D, Vertex v)
+        {
+            int d;
+            d = 0;
+            if (D == 'S') d = 1;
+            _vertices[r + _N + 1, q + _N + 1, d] = v;
+        }
+        public Vertex GetVertex(int q, int r, char D) {
+            int d;
+            d = 0;
+            if (D == 'S') d = 1;
+            return _vertices[r + _N + 1, q + _N + 1, d]; 
+        }
 
         public void Fill(int val)
         {
@@ -79,24 +107,6 @@ namespace Hexgrid
                 }
             }
         }
-
-        public List<Vertex> GetTileVertices(Tile tile) {
-            int q, r;
-            q = tile.GetQ();
-            r = tile.GetR();
-            return new List<Vertex>()
-            {
-                new Vertex(q, r, 'N'),
-                new Vertex(q, r-1, 'S'),
-                new Vertex(q-1, r+1, 'N'),
-                new Vertex(q, r, 'S'),
-                new Vertex(q, r+1, 'N'),
-                new Vertex(q+1, r-1, 'S'),
-            };
-        }
-
-
-
 
 
         public void UpdateTileNeighbors(Tile tile)
@@ -128,6 +138,8 @@ namespace Hexgrid
                 }
             }
         }
+
+
 
         public void PrintTileNeighbors(Tile tile)
         {
