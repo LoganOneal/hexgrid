@@ -3,19 +3,19 @@ using System.Collections.Generic;
 
 namespace Hexgrid
 {
+    // maps onto _dirVector for traversing the grid. 
+    public enum Direction
+    {
+        E = 0,
+        NE = 1,
+        NW = 2,
+        W = 3,
+        SW = 4,
+        SE = 5
+    }
+
     public class HexGrid
     {
-        // maps onto _dirVector for traversing the grid. 
-        public enum Direction
-        {
-            E = 0,
-            NE = 1,
-            NW = 2,
-            W = 3,
-            SW = 4,
-            SE = 5
-        }
-
         private Tile[,] _grid;
         private int _N;
 
@@ -42,8 +42,10 @@ namespace Hexgrid
             Edge edge;
 
             _N = N;
+
             _grid = new Tile[2 * N + 1,2 * N + 1];
             _vertices = new Vertex[2 * N + 3, 2 * N + 3, 2];
+            _edges = new Edge[2 * N + 3, 2 * N + 3, 3];
 
             for (q = -_N; q <= _N; q++)
             {
@@ -76,15 +78,15 @@ namespace Hexgrid
                         q2 = q + _edgeDirVector[i].Item1;
                         r2 = r + _edgeDirVector[i].Item2;
                         d = _edgeDirVector[i].Item3;
-                        if (GetEdge(q2, r2, e) == null)
+                        if (GetEdge(q2, r2, d) == null)
                         {
                             edge = new Edge(q2, r2, d);
                             tile.AddEdge(edge);
-                            StoreEdge(q2, r2, e, edge);
+                            StoreEdge(q2, r2, d, edge);
                         }
                         else
                         {
-                            tile.AddVertex(GetVertex(q2, r2, D));
+                            tile.AddEdge(GetEdge(q2, r2, d));
                         }
                     }
 
@@ -95,6 +97,8 @@ namespace Hexgrid
             UpdateGridNeighbors();
 
             //GetTile(1,0).PrintVertices();
+            GetTile(1,0).PrintEdges();
+
         }
 
         // Store Hex(q, r) at array[r][q - max(0, N-r)]
@@ -120,7 +124,7 @@ namespace Hexgrid
             return _vertices[r + _N + 1, q + _N + 1, d]; 
         }
 
-        public Vertex GetEdge(int q, int r, Direction d) { return _edges[r + _N + 1, q + _N + 1, (int)d - 1] = e; }
+        public Edge GetEdge(int q, int r, Direction d) { return _edges[r + _N + 1, q + _N + 1, (int)d - 1]; }
         public void StoreEdge(int q, int r, Direction d, Edge e) { _edges[r + _N + 1, q + _N + 1, (int)d - 1] = e; }
 
         public void Fill(int val)
