@@ -5,17 +5,8 @@ namespace Hexgrid
 {
     public class HexGrid
     {
-        private Tile[,] _grid;
-        private int _N;
-
-        private (int delta_q, int delta_r)[] _tileDirVecor = new (int, int)[] { (1, 0), (1, -1), (0, -1), 
-                                                                             (-1, 0), (-1, 1), (0, 1) };
-
-        private Vertex[,,] _vertices;
-        private (int delta_q, int delta_r, char D)[] _vertexDirVecor = new (int, int, char)[] { (0, 0, 'N'), (0, -1, 'S'), (-1, 1, 'N'), (0, 0, 'S'), (0, 1, 'N'), (1, -1, 'S') };
-
         // maps onto _dirVector for traversing the grid. 
-        public enum directions 
+        public enum Direction
         {
             E = 0,
             NE = 1,
@@ -25,6 +16,19 @@ namespace Hexgrid
             SE = 5
         }
 
+        private Tile[,] _grid;
+        private int _N;
+
+        private (int delta_q, int delta_r)[] _tileDirVector = new (int, int)[] { (1, 0), (1, -1), (0, -1), 
+                                                                                 (-1, 0), (-1, 1), (0, 1) };
+
+        private Vertex[,,] _vertices;
+        private (int delta_q, int delta_r, char D)[] _vertexDirVector = new (int, int, char)[] { (0, 0, 'N'), (0, -1, 'S'), (-1, 1, 'N'), (0, 0, 'S'), (0, 1, 'N'), (1, -1, 'S') };
+
+        private Edge[,,] _edges;
+        private (int delta_q, int delta_r, Direction d)[] _edgeDirVector = new (int, int, Direction)[] { (0, 0, Direction.NE), (0, 0, Direction.NW), (0, 0, Direction.W), 
+                                                                                                         (-1, 1, Direction.NE), (0, 1, Direction.NW), (1, 0, Direction.W), };
+
         // create a hexmap to store tiles
         // N is the radius of the hexagon shapes grid
         public HexGrid(int N)
@@ -32,8 +36,10 @@ namespace Hexgrid
             int q, r;
             int q2, r2;
             char D;
+            Direction d;
             Tile tile;
             Vertex vertex;
+            Edge edge;
 
             _N = N;
             _grid = new Tile[2 * N + 1,2 * N + 1];
@@ -48,17 +54,35 @@ namespace Hexgrid
                     StoreTile(q, r, tile);
 
                     // Create and store vertices
-                    for (int i = 0; i < _vertexDirVecor.GetLength(0); i++)
+                    for (int i = 0; i < _vertexDirVector.GetLength(0); i++)
                     {
-                        q2 = q + _vertexDirVecor[i].Item1;
-                        r2 = r + _vertexDirVecor[i].Item2;
-                        D = _vertexDirVecor[i].Item3;
+                        q2 = q + _vertexDirVector[i].Item1;
+                        r2 = r + _vertexDirVector[i].Item2;
+                        D = _vertexDirVector[i].Item3;
                         if (GetVertex(q2, r2, D) == null)
                         {
                             vertex = new Vertex(q2, r2, D);
                             tile.AddVertex(vertex);
                             StoreVertex(q2, r2, D, vertex);
                         } else
+                        {
+                            tile.AddVertex(GetVertex(q2, r2, D));
+                        }
+                    }
+
+                    // Create and store edges
+                    for (int i = 0; i < _edgeDirVector.GetLength(0); i++)
+                    {
+                        q2 = q + _edgeDirVector[i].Item1;
+                        r2 = r + _edgeDirVector[i].Item2;
+                        d = _edgeDirVector[i].Item3;
+                        if (GetEdge(q2, r2, e) == null)
+                        {
+                            edge = new Edge(q2, r2, d);
+                            tile.AddEdge(edge);
+                            StoreEdge(q2, r2, e, edge);
+                        }
+                        else
                         {
                             tile.AddVertex(GetVertex(q2, r2, D));
                         }
@@ -88,12 +112,16 @@ namespace Hexgrid
             if (D == 'S') d = 1;
             _vertices[r + _N + 1, q + _N + 1, d] = v;
         }
+
         public Vertex GetVertex(int q, int r, char D) {
             int d;
             d = 0;
             if (D == 'S') d = 1;
             return _vertices[r + _N + 1, q + _N + 1, d]; 
         }
+
+        public Vertex GetEdge(int q, int r, Direction d) { return _edges[r + _N + 1, q + _N + 1, (int)d - 1] = e; }
+        public void StoreEdge(int q, int r, Direction d, Edge e) { _edges[r + _N + 1, q + _N + 1, (int)d - 1] = e; }
 
         public void Fill(int val)
         {
@@ -114,9 +142,9 @@ namespace Hexgrid
             Tile neighbor;
             int q2, r2;
 
-            for (int i = 0; i < _tileDirVecor.GetLength(0); i++) {
-                q2 = tile.GetQ() + _tileDirVecor[i].Item1;
-                r2 = tile.GetR() + _tileDirVecor[i].Item2;
+            for (int i = 0; i < _tileDirVector.GetLength(0); i++) {
+                q2 = tile.GetQ() + _tileDirVector[i].Item1;
+                r2 = tile.GetR() + _tileDirVector[i].Item2;
                 if (q2 >= -_N && q2 <= _N && r2 >= -_N && r2 <= _N)
                 {
                     neighbor = GetTile(q2, r2);

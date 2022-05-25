@@ -14,17 +14,17 @@ namespace Hexgrid
     public class Vertex
     {
         private int _q, _r;
-        private char _D;          // 'N' if north, 'S' if south
+        private char _d;          // 'N' if north, 'S' if south
 
-        public Vertex(int q, int r, char D)
+        public Vertex(int q, int r, char d)
         {
             _q = q;
             _r = r;
-            _D = D;
+            _d = d;
         }
         public int GetQ() { return _q; }
         public int GetR() { return _r; }
-        public int GetD() { return _D; }
+        public int GetD() { return _d; }
 
 
     }
