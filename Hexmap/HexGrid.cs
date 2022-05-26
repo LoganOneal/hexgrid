@@ -52,7 +52,7 @@ namespace Hexgrid
                 for (r = Math.Max(-_N, -q - _N); r <= Math.Min(_N, -q + _N); r++)
                 {
                     // Create and store all tiles
-                    tile = new Tile(q, r);
+                    tile = new Tile();
                     StoreTile(q, r, tile);
 
                     // Create and store vertices
@@ -127,20 +127,6 @@ namespace Hexgrid
         public Edge GetEdge(int q, int r, Direction d) { return _edges[r + _N + 1, q + _N + 1, (int)d - 1]; }
         public void StoreEdge(int q, int r, Direction d, Edge e) { _edges[r + _N + 1, q + _N + 1, (int)d - 1] = e; }
 
-        public void Fill(int val)
-        {
-            int q, r;
-
-            for (q = -_N; q <= _N; q++)
-            {
-                for (r = Math.Max(-_N, -q - _N); r <= Math.Min(_N, -q + _N); r++)
-                {
-                    GetTile(q, r).SetVal(val);
-                }
-            }
-        }
-
-
         public void UpdateTileNeighbors(Tile tile)
         {
             Tile neighbor;
@@ -171,8 +157,6 @@ namespace Hexgrid
             }
         }
 
-
-
         public void PrintTileNeighbors(Tile tile)
         {
             List<Tile> neighbors;
@@ -199,35 +183,6 @@ namespace Hexgrid
                 }
             }
         }
-
-        public void Print()
-        {
-            for (int i = 0; i < _grid.GetLength(0); i++)
-            {
-                Console.Write("{0:D} = [", i);
-                for (int j = 0; j < _grid.GetLength(1); j++)
-                {
-                    if (_grid[i, j] != null)
-                        Console.Write("{0:D} ", _grid[i, j].GetVal());
-                    else
-                        Console.Write("null ");
-
-                }
-                Console.Write("] \n");
-            }
-        }
-
-        public int Size()
-        {
-            int sum;
-
-            sum = 1;
-            for(int i = 1; i <= _N; i++)
-            {
-                sum += i * 6;
-            }
-            return sum;
-        } 
 
     }
 }

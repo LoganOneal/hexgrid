@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatanASP", "CatanWebApp\CatanASP.csproj", "{AC5E7DEA-1BD6-4D27-8774-125F5F6D9792}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{851D278D-4296-49AD-9096-1BCD757EC62A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{851D278D-4296-49AD-9096-1BCD757EC62A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{851D278D-4296-49AD-9096-1BCD757EC62A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC5E7DEA-1BD6-4D27-8774-125F5F6D9792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC5E7DEA-1BD6-4D27-8774-125F5F6D9792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC5E7DEA-1BD6-4D27-8774-125F5F6D9792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC5E7DEA-1BD6-4D27-8774-125F5F6D9792}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
