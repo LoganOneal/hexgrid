@@ -11,3 +11,5 @@
 https://stackoverflow.com/questions/39286745/calling-a-view-from-another-view-in-mvc-net
 
 https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics
+
+https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/views/view-components/sample6.x/ViewComponentSample/ViewComponents
