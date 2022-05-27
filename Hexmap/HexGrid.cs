@@ -93,7 +93,7 @@ namespace Hexgrid
                 }
             }
 
-            Fill(1);
+           // Fill(1);
             UpdateGridNeighbors();
 
             //GetTile(1,0).PrintVertices();

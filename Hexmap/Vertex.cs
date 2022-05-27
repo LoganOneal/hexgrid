@@ -11,21 +11,12 @@ namespace Hexgrid
 
         Each hexagon has 6 vertices. We can choose 2 vertices that are each shared with 3 tiles.
         Here, I've picked the north and south vertices, but there are many ways to do this.*/
-    public class Vertex
+    public class Vertex :IVertex
     {
-        private int _q, _r;
-        private char _d;          // 'N' if north, 'S' if south
-
-        public Vertex(int q, int r, char d)
+        public Vertex()
         {
-            _q = q;
-            _r = r;
-            _d = d;
+            Console.WriteLine("Vertex Created");
         }
-        public int GetQ() { return _q; }
-        public int GetR() { return _r; }
-        public int GetD() { return _d; }
-
 
     }
 }

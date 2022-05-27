@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Hexgrid;
 
 namespace HexgridTester
@@ -9,12 +10,11 @@ namespace HexgridTester
         {
             // HexGrid hm = new HexGrid(1);
 
-            GenericHexGrid<Tile> grid = new GenericHexGrid<Tile>(3);
+            GenericHexGrid<Tile, Vertex> grid = new GenericHexGrid<Tile, Vertex>(2);
 
             //grid.GetTile(0, 1).Print();
-          //  hm.Print();
-
-           // hm.PrintGridNeighbors();
+            //  hm.Print();
+             grid.GetNeighbors(-2, 2);
         }
     }
 }
