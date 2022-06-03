@@ -1,0 +1,69 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+.hexagon {
+    $hexagon-size: 150px;
+    $hexagon-color-1: #00ffb8;
+    $hexagon-color-2: #13ce9a;
+    width: ($hexagon-size * 0.645);
+    height: $hexagon-size;
+    background-image: linear-gradient(90deg, $hexagon-color-1, $hexagon-color-2);
+    border-radius: ($hexagon-size / 10);
+    transition: transform 400ms ease;
+    &:hover
+
+{
+    transform: rotate(30deg);
+}
+
+&:before,
+&:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: inherit;
+    height: inherit;
+    background-image: inherit;
+    border-radius: inherit;
+}
+
+&:before {
+    transform: rotate(60deg);
+}
+
+&:after {
+    transform: rotate(-60deg);
+}
+
+}
+
+// Base Styling
+
+body {
+    margin: 0;
+    background-color: #272727;
+}
+
+.center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

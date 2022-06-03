@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<head>
+    <link rel="stylesheet" href="~/css/Catan.css" asp-append-version="true" />
+</head>
+
+<body>
+
+    <ul>
+        @foreach (var point in Model.points)
+        {
+            <div class="hexagon-wrapper"  style="left:@(point.y +"px");top:@(point.x +"px");">
+              <div class="hexagon">
+                <i class="fab fa-facebook"></i>
+              </div>  
+              </div>
+        }
+    </ul>
+
+    <div class="hexagon-wrapper">
+      <div class="hexagon">
+        <i class="fab fa-facebook"></i>
+      </div>
+   </div>
+   <!-- 
+    <div class="hexagon-wrapper">
+      <div class="hexagon">
+        <i class="fab fa-twitter"></i>
+      </div>
+    </div>
+    <div class="hexagon-wrapper">
+      <div class="hexagon">
+        <i class="fab fa-instagram"></i>
+      </div>
+    </div> -->
+
+
+</body>
+

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Hexgrid
 {
-    interface ITile
+    public interface ITile
     {
+        public int q { get; set; }
+        public int r { get; set; }
+
     }
 }

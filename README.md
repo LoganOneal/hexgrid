@@ -13,3 +13,7 @@ https://stackoverflow.com/questions/39286745/calling-a-view-from-another-view-in
 https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/types/generics
 
 https://github.com/dotnet/AspNetCore.Docs/tree/main/aspnetcore/mvc/views/view-components/sample6.x/ViewComponentSample/ViewComponents
+
+https://codepen.io/monokultur/pen/MJPBzQ
+
+https://github.com/SnuggleFrijoles/catan/blob/master/board.js#L33
