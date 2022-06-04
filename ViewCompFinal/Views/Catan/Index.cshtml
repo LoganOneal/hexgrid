@@ -9,22 +9,17 @@
 
 <body>
 
-    <ul>
+    <div class="board">
         @foreach (var point in Model.points)
         {
             <div class="hexagon-wrapper"  style="left:@(point.y +"px");top:@(point.x +"px");">
               <div class="hexagon">
                 <i class="fab fa-facebook"></i>
               </div>  
-              </div>
+             </div>
         }
-    </ul>
+    </div>
 
-    <div class="hexagon-wrapper">
-      <div class="hexagon">
-        <i class="fab fa-facebook"></i>
-      </div>
-   </div>
    <!-- 
     <div class="hexagon-wrapper">
       <div class="hexagon">

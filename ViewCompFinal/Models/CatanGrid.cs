@@ -19,10 +19,10 @@ public class CatanGrid
         GenericHexGrid<Tile, Vertex> _grid = new GenericHexGrid<Tile, Vertex>(mapRadius);
         tiles = _grid.GetTiles();
 
-        _orientation = Orientation.layout_flat;
+        _orientation = Orientation.layout_pointy;
 
-        _size = new Point(500, 500);
-        _origin = new Point(-250, 250);
+        _size = new Point(100, 100);
+        _origin = new Point(1000, 1000);
         _layout = new Layout(_orientation, _size, _origin);
 
         points = _grid.AllFlatAxialToPixel(_layout);
