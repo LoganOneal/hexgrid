@@ -10,27 +10,14 @@
 <body>
 
     <div class="board">
-        @foreach (var point in Model.points)
+        @foreach (var tile in Model.tiles)
         {
-            <div class="hexagon-wrapper"  style="left:@(point.y +"px");top:@(point.x +"px");">
-              <div class="hexagon">
-                <i class="fab fa-facebook"></i>
+            <div class="hexagon-wrapper"  style="left:@(tile.AxialToPixel(Model._layout).y +"px");top:@(tile.AxialToPixel(Model._layout).x +"px");">
+              <div class="hexagon" style="background:linear-gradient(-180deg, white, @(tile.GetColor()));">
               </div>  
              </div>
         }
     </div>
-
-   <!-- 
-    <div class="hexagon-wrapper">
-      <div class="hexagon">
-        <i class="fab fa-twitter"></i>
-      </div>
-    </div>
-    <div class="hexagon-wrapper">
-      <div class="hexagon">
-        <i class="fab fa-instagram"></i>
-      </div>
-    </div> -->
 
 
 </body>

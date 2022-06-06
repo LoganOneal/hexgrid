@@ -11,5 +11,6 @@ namespace Hexgrid
         public int q { get; set; }
         public int r { get; set; }
 
+
     }
 }

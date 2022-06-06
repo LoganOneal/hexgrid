@@ -7,15 +7,9 @@ namespace ViewComponentSample.Controllers
     {
         public IActionResult Index()
         {
-            var model = new CatanGrid(3);
+            var model = new CatanGrid(2);
             return View(model);
         }
 
-
-
     }
 }
-
-
-// Logan : 1
-// Kaitlyn : 1 + .33
